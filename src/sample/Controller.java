@@ -19,26 +19,13 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
 
-        @FXML
-        private TableView<tblinfo> table;
-
-        @FXML
-        private TableColumn<tblinfo, String> bookId;
-
-        @FXML
-        private TableColumn<tblinfo, String> bookName;
-
-        @FXML
-        private TableColumn<tblinfo, String> authorName;
-
-        @FXML
-        private TableColumn<tblinfo, Integer> totalAmount;
-
-        @FXML
-        private TableColumn<tblinfo, Integer> leftAmount;
-
-        @FXML
-        private Button btn1;
+        @FXML private TableView<tblinfo> table;
+        @FXML private TableColumn<tblinfo, String> bookId;
+        @FXML private TableColumn<tblinfo, String> bookName;
+        @FXML private TableColumn<tblinfo, String> authorName;
+        @FXML private TableColumn<tblinfo, Integer> totalAmount;
+        @FXML private TableColumn<tblinfo, Integer> leftAmount;
+        @FXML private Button btn1;
 
 
     @FXML
@@ -55,10 +42,10 @@ public class Controller implements Initializable {
         System.out.println("Can't open new window");
     }
     }
-//    @FXML
-//    void deleteRowFromTable(ActionEvent event) {
-//
-//    }
+    @FXML
+    void deleteRowFromTable(ActionEvent event) {
+        table.getItems().removeAll(table.getSelectionModel().getSelectedItem());
+    }
 
 
 
@@ -72,17 +59,17 @@ public class Controller implements Initializable {
             System.out.println(table.getSelectionModel().getSelectedItem().getAuthorName());
 
         }
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SecondWindow.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-//        stage.initStyle(StageStyle.DECORATED);
-            stage.setTitle("Editor Window");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        }catch (Exception e){
-            System.out.println("Can't open new window");
-        }
+//        try{
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SecondWindow.fxml"));
+//            Parent root1 = (Parent) fxmlLoader.load();
+//            Stage stage = new Stage();
+////        stage.initStyle(StageStyle.DECORATED);
+//            stage.setTitle("Editor Window");
+//            stage.setScene(new Scene(root1));
+//            stage.show();
+//        }catch (Exception e){
+//            System.out.println("Can't open new window");
+//        }
     }
 
 
