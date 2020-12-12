@@ -3,35 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-    <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="623.3333536783854" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="30.0" prefWidth="55.33331298828125" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="416.6666666666667" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-    </rowConstraints>
-    <children>
-        <TableView fx:id="table" onMouseClicked="#clickItem" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-            <columns>
-                <TableColumn fx:id="bookId" prefWidth="75.0" text="bookId" />
-                <TableColumn fx:id="bookName" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="bookName" />
-                <TableColumn fx:id="authorName" maxWidth="1.7976931348623157E308" prefWidth="150.0" text="authorName" />
-            <TableColumn fx:id="totalAmount" prefWidth="90.0" text="totalAmount" />
-            <TableColumn fx:id="leftAmount" prefWidth="90.0" text="leftAmount" />
-            </columns>
-        </TableView>
-      <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Edit" textAlignment="CENTER" textFill="#5e0c87" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <font>
-            <Font name="Bookman Old Style" size="16.0" />
-         </font>
-      </Button>
-    </children>
-</GridPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TableView fx:id="table" layoutX="15.0" layoutY="58.0" onMouseClicked="#clickItem" prefHeight="263.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="bookId" prefWidth="75.0" text="bookId" />
+            <TableColumn fx:id="bookName" prefWidth="75.0" text="bookName" />
+            <TableColumn fx:id="authorName" prefWidth="75.0" text="authorName" />
+            <TableColumn fx:id="totalAmount" prefWidth="75.0" text="totalAmount" />
+            <TableColumn fx:id="leftAmount" prefWidth="75.0" text="leftAmount" />
+        </columns>
+      </TableView>
+      <Button fx:id="btn1" layoutX="230.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="137.0" text="Edit" />
+   </children>
+</AnchorPane>

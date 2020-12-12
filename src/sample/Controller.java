@@ -17,13 +17,30 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    @FXML private TableView<tblinfo> table;
-    @FXML private TableColumn<tblinfo, String> bookId;
-    @FXML private TableColumn<tblinfo, String> bookName;
-    @FXML private TableColumn<tblinfo, String> authorName;
-    @FXML private TableColumn<tblinfo, Integer> totalAmount;
-    @FXML private TableColumn<tblinfo, Integer> leftAmount;
-    @FXML private Button btn1;
+
+
+        @FXML
+        private TableView<tblinfo> table;
+
+        @FXML
+        private TableColumn<tblinfo, String> bookId;
+
+        @FXML
+        private TableColumn<tblinfo, String> bookName;
+
+        @FXML
+        private TableColumn<tblinfo, String> authorName;
+
+        @FXML
+        private TableColumn<tblinfo, Integer> totalAmount;
+
+        @FXML
+        private TableColumn<tblinfo, Integer> leftAmount;
+
+        @FXML
+        private Button btn1;
+
+
     @FXML
     void handleButtonAction(ActionEvent event) {
     try{
@@ -38,6 +55,10 @@ public class Controller implements Initializable {
         System.out.println("Can't open new window");
     }
     }
+//    @FXML
+//    void deleteRowFromTable(ActionEvent event) {
+//
+//    }
 
 
 
