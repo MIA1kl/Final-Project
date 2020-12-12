@@ -1,5 +1,9 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +30,8 @@ public class Controller implements Initializable {
         @FXML private TableColumn<tblinfo, Integer> totalAmount;
         @FXML private TableColumn<tblinfo, Integer> leftAmount;
         @FXML private Button btn1;
-
+        @FXML private TextField filterField;
+        
 
     @FXML
     void handleButtonAction(ActionEvent event) {
@@ -81,6 +86,37 @@ public class Controller implements Initializable {
         totalAmount.setCellValueFactory(new PropertyValueFactory<tblinfo, Integer>("totalAmount"));
         leftAmount.setCellValueFactory(new PropertyValueFactory<tblinfo, Integer>("leftAmount"));
         table.getItems().setAll(Database.init());
+
+
+        FilteredList<tblinfo> filteredData = new FilteredList<>(table.getItems(), b -> true);
+        filterField.textProperty().addListener((observable, oldValue, newValue) ->{
+            filteredData.setPredicate(tblinfo -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if(tblinfo.getBookName().toLowerCase().indexOf(lowerCaseFilter)!=-1){
+                    return true;
+                }
+                else if (tblinfo.getAuthorName().toLowerCase().indexOf(lowerCaseFilter)!=-1){
+                    return true;
+                }
+                else if(String.valueOf(tblinfo.getTotalAmount()).indexOf(lowerCaseFilter)!=-1){
+                    return true;
+                }
+                else if(String.valueOf(tblinfo.getLeftAmount()).indexOf(lowerCaseFilter)!=-1){
+                    return true;
+                }
+                else return false;
+
+            });
+        });
+
+        SortedList<tblinfo> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(table.comparatorProperty());
+        table.setItems(sortedData);
     }
 }
 
