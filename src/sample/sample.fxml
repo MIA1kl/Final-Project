@@ -6,20 +6,32 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TableView fx:id="table" layoutX="15.0" layoutY="58.0" onMouseClicked="#clickItem" prefHeight="276.0" prefWidth="567.0">
+      <TableView fx:id="table" layoutX="16.0" layoutY="77.0" onMouseClicked="#clickItem" prefHeight="276.0" prefWidth="567.0">
         <columns>
           <TableColumn fx:id="bookId" prefWidth="75.0" text="bookId" />
-            <TableColumn fx:id="bookName" prefWidth="75.0" text="bookName" />
-            <TableColumn fx:id="authorName" prefWidth="75.0" text="authorName" />
-            <TableColumn fx:id="totalAmount" prefWidth="75.0" text="totalAmount" />
-            <TableColumn fx:id="leftAmount" prefWidth="75.0" text="leftAmount" />
+            <TableColumn fx:id="bookName" prefWidth="160.0" text="bookName" />
+            <TableColumn fx:id="authorName" prefWidth="150.0" text="authorName" />
+            <TableColumn fx:id="totalAmount" prefWidth="90.0" text="totalAmount" />
+            <TableColumn fx:id="leftAmount" prefWidth="90.0" text="leftAmount" />
         </columns>
       </TableView>
-      <Button fx:id="btn1" layoutX="230.0" layoutY="347.0" mnemonicParsing="false" onAction="#deleteRowFromTable" prefHeight="25.0" prefWidth="137.0" text="Delete Book" />
-      <TextField fx:id="filterField" layoutX="94.0" layoutY="22.0" prefHeight="25.0" prefWidth="317.0" />
-      <Label layoutX="25.0" layoutY="26.0" text="Search box" />
+      <Button fx:id="btn1" layoutX="97.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteBook" prefHeight="25.0" prefWidth="137.0" text="Delete Book" />
+      <TextField fx:id="filterField" layoutX="141.0" layoutY="43.0" prefHeight="25.0" prefWidth="317.0" />
+      <Label layoutX="35.0" layoutY="46.0" prefHeight="19.0" prefWidth="95.0" text="Search book:" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Label>
+      <Button fx:id="btn2" layoutX="16.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleButtonAdding" text="Add Book" />
+      <Button fx:id="btn3" layoutX="252.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Students Table" />
+      <Label layoutX="206.0" text="Library of IAU" textFill="#870909">
+         <font>
+            <Font name="Californian FB Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRefresh" layoutX="520.0" layoutY="359.0" mnemonicParsing="false" onAction="#updateTable" text="Refresh" />
    </children>
 </AnchorPane>

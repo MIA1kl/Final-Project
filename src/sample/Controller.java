@@ -1,7 +1,5 @@
 package sample;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -14,13 +12,18 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
+import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Controller implements Initializable, Refreshable {
 
 
         @FXML private TableView<tblinfo> table;
@@ -30,13 +33,17 @@ public class Controller implements Initializable {
         @FXML private TableColumn<tblinfo, Integer> totalAmount;
         @FXML private TableColumn<tblinfo, Integer> leftAmount;
         @FXML private Button btn1;
-        @FXML private TextField filterField;
-        
+        @FXML private Button btn2;
+        @FXML private Button btn3;
+        @FXML private Button btnRefresh;
+        @FXML private TextField filterField;;
+        private int currentId = -1;
+
 
     @FXML
     void handleButtonAction(ActionEvent event) {
     try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SecondWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentWindow.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
 //        stage.initStyle(StageStyle.DECORATED);
@@ -47,34 +54,51 @@ public class Controller implements Initializable {
         System.out.println("Can't open new window");
     }
     }
+
     @FXML
-    void deleteRowFromTable(ActionEvent event) {
-        table.getItems().removeAll(table.getSelectionModel().getSelectedItem());
+    void handleButtonAdding(ActionEvent actionEvent) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/sample/addition/SecondWindow.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+
+    public void updateTable(ActionEvent actionEvent) {
+        table.getItems().setAll(Database.init());
+        table.refresh();
+    }
+
+    @FXML
+    public void deleteBook(ActionEvent actionEvent) {
+        if (currentId != -1) {
+            Database.deleteBook(currentId);
+            table.getItems().setAll(Database.init());
+        }
+
+    }
+
+
+    public Connection connect() throws SQLException {
+        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/IAUlib","natalia","123123123");
     }
 
 
 
     @FXML
     void clickItem(MouseEvent event) {
-        if (event.getClickCount() == 1) //Checking double click
+        if (event.getClickCount() == 1)
         {
-            Button btn2;
             System.out.println(table.getSelectionModel().getSelectedItem().getBookId());
-            System.out.println(table.getSelectionModel().getSelectedItem().getBookName());
-            System.out.println(table.getSelectionModel().getSelectedItem().getAuthorName());
-
+            currentId = Integer.parseInt(table.getSelectionModel().getSelectedItem().getBookId());
         }
-//        try{
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SecondWindow.fxml"));
-//            Parent root1 = (Parent) fxmlLoader.load();
-//            Stage stage = new Stage();
-////        stage.initStyle(StageStyle.DECORATED);
-//            stage.setTitle("Editor Window");
-//            stage.setScene(new Scene(root1));
-//            stage.show();
-//        }catch (Exception e){
-//            System.out.println("Can't open new window");
-//        }
     }
 
 
@@ -97,16 +121,16 @@ public class Controller implements Initializable {
 
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if(tblinfo.getBookName().toLowerCase().indexOf(lowerCaseFilter)!=-1){
+                if(tblinfo.getBookName().toLowerCase().contains(lowerCaseFilter)){
                     return true;
                 }
-                else if (tblinfo.getAuthorName().toLowerCase().indexOf(lowerCaseFilter)!=-1){
+                else if (tblinfo.getAuthorName().toLowerCase().contains(lowerCaseFilter)){
                     return true;
                 }
-                else if(String.valueOf(tblinfo.getTotalAmount()).indexOf(lowerCaseFilter)!=-1){
+                else if(String.valueOf(tblinfo.getTotalAmount()).contains(lowerCaseFilter)){
                     return true;
                 }
-                else if(String.valueOf(tblinfo.getLeftAmount()).indexOf(lowerCaseFilter)!=-1){
+                else if(String.valueOf(tblinfo.getLeftAmount()).contains(lowerCaseFilter)){
                     return true;
                 }
                 else return false;
@@ -116,7 +140,23 @@ public class Controller implements Initializable {
 
         SortedList<tblinfo> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(table.comparatorProperty());
-        table.setItems(sortedData);
+//        table.setItems(sortedData);
+    }
+
+    @Override
+    public boolean isCurrent() {
+        try {
+            refresh();
+        } catch (RefreshFailedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public void refresh() throws RefreshFailedException {
+        table.getItems().setAll(Database.init());
+        table.refresh();
     }
 }
 

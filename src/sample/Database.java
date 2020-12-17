@@ -8,6 +8,7 @@ public class Database {
     final static String DATABASE_URL = "jdbc:postgresql://localhost:5432/IAUlib";
     final static String user = "natalia";
     final static String pass = "123123123";
+    static Connection connection = null;
     final static String SELECT_QUERY =
             "SELECT bookId, bookName, authorName, totalAmount, leftAmount FROM tblInfo";
 
@@ -15,7 +16,9 @@ public class Database {
         Statement statement = null;
         List<tblinfo> tblInfo = new ArrayList<>();
         try {
-            Connection connection = DriverManager.getConnection(DATABASE_URL, user, pass);
+            if (connection == null) {
+                connection = DriverManager.getConnection(DATABASE_URL, user, pass);
+            }
             statement = connection.createStatement();
             ResultSet res = statement.executeQuery(SELECT_QUERY);
 
@@ -34,6 +37,24 @@ public class Database {
         }
         return tblInfo;
     }
+    public static void addBook(tblinfo book) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("INSERT INTO tblInfo (bookName, authorName,totalAmount, leftAmount) " + "VALUES ('" + book.getBookName() +"','" + book.getAuthorName()+"','" + book.getTotalAmount() +"','" + book.getLeftAmount()  + "')");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static void deleteBook(int id) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM tblInfo where bookid=" + Integer.toString(id));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 
 
 }
