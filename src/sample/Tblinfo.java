@@ -2,14 +2,14 @@ package sample;
 
 import java.lang.reflect.AnnotatedArrayType;
 
-public class tblinfo {
+public class Tblinfo {
     private String bookId;
     private String bookName;
     private String authorName;
     private int totalAmount;
     private int leftAmount;
 
-    public tblinfo(String bookId, String bookName, String authorName, int totalAmount,int leftAmount) {
+    public Tblinfo(String bookId, String bookName, String authorName, int totalAmount, int leftAmount) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.authorName = authorName;
@@ -17,7 +17,7 @@ public class tblinfo {
         this.leftAmount = leftAmount;
     }
 
-    public tblinfo() {
+    public Tblinfo() {
 
     }
 

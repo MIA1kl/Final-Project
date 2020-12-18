@@ -1,5 +1,7 @@
 package sample;
 
+import sample.StudentTable.TblStudents;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +13,31 @@ public class Database {
     static Connection connection = null;
     final static String SELECT_QUERY =
             "SELECT bookId, bookName, authorName, totalAmount, leftAmount FROM tblInfo";
+    final static String SELECT_QUERY2 =
+            "SELECT stdId, stdName, stdSurname, dueDate FROM tblStudents";
 
-    public static List<tblinfo> init() {
+    public static List<TblStudents> init2() throws SQLException {
         Statement statement = null;
-        List<tblinfo> tblInfo = new ArrayList<>();
+        List<TblStudents>  tblStudents = new ArrayList<>();
+        statement = connection.createStatement();
+
+        assert false;
+        ResultSet res1 = statement.executeQuery(SELECT_QUERY2);
+            while (res1.next()) {
+                TblStudents q = new TblStudents();
+                q.setStdId(res1.getString("stdId"));
+                q.setStdName(res1.getString("stdName"));
+                q.setStdSurname(res1.getString("stdSurname"));
+                q.setDueDate(res1.getString("dueDate"));
+                tblStudents.add(q);
+            }
+
+        return tblStudents;
+    }
+
+    public static List<Tblinfo> init1() throws SQLException {
+        Statement statement = null;
+        List<Tblinfo> tblInfo = new ArrayList<>();
         try {
             if (connection == null) {
                 connection = DriverManager.getConnection(DATABASE_URL, user, pass);
@@ -23,7 +46,7 @@ public class Database {
             ResultSet res = statement.executeQuery(SELECT_QUERY);
 
             while (res.next()) {
-                tblinfo a = new tblinfo();
+                Tblinfo a = new Tblinfo();
                 a.setBookId(Integer.toString(res.getInt("bookId")));
                 a.setBookName(res.getString("bookName"));
                 a.setAuthorName(res.getString("authorName"));
@@ -32,12 +55,14 @@ public class Database {
                 tblInfo.add(a);
             }
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return tblInfo;
     }
-    public static void addBook(tblinfo book) {
+
+
+    public static void addBook(Tblinfo book) {
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO tblInfo (bookName, authorName,totalAmount, leftAmount) " + "VALUES ('" + book.getBookName() +"','" + book.getAuthorName()+"','" + book.getTotalAmount() +"','" + book.getLeftAmount()  + "')");
@@ -54,7 +79,4 @@ public class Database {
             throwables.printStackTrace();
         }
     }
-
-
-
 }

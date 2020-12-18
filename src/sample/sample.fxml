@@ -19,19 +19,31 @@
             <TableColumn fx:id="leftAmount" prefWidth="90.0" text="leftAmount" />
         </columns>
       </TableView>
-      <Button fx:id="btn1" layoutX="97.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteBook" prefHeight="25.0" prefWidth="137.0" text="Delete Book" />
+      <Button fx:id="btn1" layoutX="114.0" layoutY="365.0" mnemonicParsing="false" onAction="#deleteBook" prefHeight="25.0" prefWidth="137.0" text="Delete Book" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Button>
       <TextField fx:id="filterField" layoutX="141.0" layoutY="43.0" prefHeight="25.0" prefWidth="317.0" />
       <Label layoutX="35.0" layoutY="46.0" prefHeight="19.0" prefWidth="95.0" text="Search book:" textFill="#870909">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font></Label>
-      <Button fx:id="btn2" layoutX="16.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleButtonAdding" text="Add Book" />
-      <Button fx:id="btn3" layoutX="252.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Students Table" />
+      <Button fx:id="btn2" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleButtonAdding" text="Add Book" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn3" layoutX="265.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Students Table" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Button>
       <Label layoutX="206.0" text="Library of IAU" textFill="#870909">
          <font>
             <Font name="Californian FB Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnRefresh" layoutX="520.0" layoutY="359.0" mnemonicParsing="false" onAction="#updateTable" text="Refresh" />
+      <Button fx:id="btnRefresh" layoutX="516.0" layoutY="365.0" mnemonicParsing="false" onAction="#updateTable" text="Refresh" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>
