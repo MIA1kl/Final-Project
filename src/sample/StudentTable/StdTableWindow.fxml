@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="table1" layoutX="74.0" layoutY="71.0" prefHeight="263.0" prefWidth="451.0">
+        <columns>
+          <TableColumn fx:id="stdId" prefWidth="87.33333969116211" text="Student ID" />
+            <TableColumn fx:id="stdName" prefWidth="134.00001525878906" text="Student Name" />
+            <TableColumn fx:id="stdSurname" prefWidth="125.33331298828125" text="Student Surname" />
+            <TableColumn fx:id="dueDate" prefWidth="99.99996948242188" text="Due Date" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="358.0" mnemonicParsing="false" text="Add Student" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="136.0" layoutY="358.0" mnemonicParsing="false" text="Delete Student" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="510.0" layoutY="358.0" mnemonicParsing="false" text="Refresh" textFill="#870909">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="11.0" layoutY="14.0" prefHeight="45.0" prefWidth="578.0" text="The list of Students who took the book with given ID:" textFill="#870909">
+         <font>
+            <Font name="Californian FB Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
