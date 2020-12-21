@@ -1,10 +1,13 @@
 package sample.StudentTable;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import sample.Database;
 
 import java.net.URL;
@@ -18,7 +21,35 @@ public class StdTableClass implements Initializable {
     @FXML private TableColumn<TblStudents, String> stdName;
     @FXML private TableColumn<TblStudents, String> stdSurname;
     @FXML private TableColumn<TblStudents, String> dueDate;
+    @FXML private Button btnAdd;
+    @FXML private Button btnDel;
+    @FXML private Button btnRef;
+    private String currentstdId = null;
+    private int currentbookId = -1;
+    @FXML
+    public void updateTable1(ActionEvent actionEvent) throws SQLException {
+        table1.getItems().setAll(Database.init2());
+        table1.refresh();
+    }
 
+    @FXML
+    public void deleteStudent(ActionEvent actionEvent) throws SQLException {
+        if (currentstdId != null) {
+            Database.deleteStudent(currentstdId,currentbookId );
+            table1.getItems().setAll(Database.init2());
+
+        }
+
+    }
+    @FXML
+    void clickItem1(MouseEvent event) {
+        if (event.getClickCount() == 1)
+        {
+            System.out.println(table1.getSelectionModel().getSelectedItem().getStdId());
+            currentstdId = table1.getSelectionModel().getSelectedItem().getStdId();
+            currentbookId = Integer.parseInt(table1.getSelectionModel().getSelectedItem().getBookId());
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bookId.setCellValueFactory(new PropertyValueFactory<TblStudents, String>("bookId"));

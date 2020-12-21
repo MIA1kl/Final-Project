@@ -90,4 +90,14 @@ public class Database {
             throwables.printStackTrace();
         }
     }
+
+    public static void deleteStudent(String id , int b_id) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM tblstdlib where stdId=" + "'"+id+"'" +"AND bookId =" +Integer.toString(b_id));
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

@@ -21,8 +21,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable, Refreshable {
-
+public class Controller implements Initializable{
 
         @FXML private TableView<Tblinfo> table;
         @FXML private TableColumn<Tblinfo, String> bookId;
@@ -43,7 +42,6 @@ public class Controller implements Initializable, Refreshable {
         Parent root1= null;
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setController(new StdTableClass());
             loader.setLocation(getClass().getResource("/sample/StudentTable/StdTableWindow.fxml"));
             root1 = loader.load();
             Stage stage = new Stage();
@@ -140,24 +138,5 @@ public class Controller implements Initializable, Refreshable {
 //        table.setItems(sortedData);
     }
 
-    @Override
-    public boolean isCurrent() {
-        try {
-            refresh();
-        } catch (RefreshFailedException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
-    public void refresh() throws RefreshFailedException {
-        try {
-            table.getItems().setAll(Database.init1());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        table.refresh();
-    }
 }
 
