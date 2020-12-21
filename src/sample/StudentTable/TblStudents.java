@@ -9,7 +9,8 @@ public class TblStudents {
 
 
 
-    public TblStudents( String stdId, String stdName, String stdSurname, String dueDate) {
+    public TblStudents( String bookId, String stdId, String stdName, String stdSurname, String dueDate) {
+        this.bookId=bookId;
         this.stdId = stdId;
         this.stdName = stdName;
         this.stdSurname = stdSurname;
@@ -52,4 +53,11 @@ public class TblStudents {
         this.dueDate = dueDate;
     }
 
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
 }

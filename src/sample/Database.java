@@ -14,7 +14,16 @@ public class Database {
     final static String SELECT_QUERY =
             "SELECT bookId, bookName, authorName, totalAmount, leftAmount FROM tblInfo";
     final static String SELECT_QUERY2 =
-            "SELECT stdId, stdName, stdSurname, dueDate FROM tblStudents";
+            "SELECT\n" +
+                    "\ttblstdlib.bookId,\n" +
+                    "\ttblstudents.stdId,\n" +
+                    "\tstdName,\n" +
+                    "\tstdSurname,\n" +
+                    "\tduedate\n" +
+                    "FROM\n" +
+                    "\ttblstdlib\n" +
+                    "INNER JOIN tblStudents\n" +
+                    "    ON tblStudents.stdId = tblstdlib.stdId";
 
     public static List<TblStudents> init2() throws SQLException {
         Statement statement = null;
@@ -25,6 +34,7 @@ public class Database {
         ResultSet res1 = statement.executeQuery(SELECT_QUERY2);
             while (res1.next()) {
                 TblStudents q = new TblStudents();
+                q.setBookId(res1.getString("bookId"));
                 q.setStdId(res1.getString("stdId"));
                 q.setStdName(res1.getString("stdName"));
                 q.setStdSurname(res1.getString("stdSurname"));
@@ -74,7 +84,8 @@ public class Database {
     public static void deleteBook(int id) {
         try {
             Statement statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM tblInfo where bookid=" + Integer.toString(id));
+            statement.executeUpdate("DELETE FROM tblstdlib where bookId=" + Integer.toString(id));
+            statement.executeUpdate("DELETE FROM tblInfo where bookId=" + Integer.toString(id));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
