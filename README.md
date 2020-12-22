@@ -10,6 +10,12 @@ Each university has its own library. Unfortunately, there are not enough books f
 
 ## There is the first and main window: 
 
-![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_02-40-53.png)
+Here we can see the list of all books, with it's amount. There are 4 buttons on the bottom, and the search box on the top.
 
-Here we can see the list of all books, with it's quantity. On the top
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-15-38.png?raw=true)
+
+
+When we put the book name, author name or amounts of the book the appropriate rows are stay, and the unwanted raws are disappear:
+
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-17-06.png?raw=true)
+
