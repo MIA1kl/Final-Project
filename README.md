@@ -42,3 +42,5 @@ After refreshing, the connection between the student and the table is added on t
 When we move to the main window and refresh it, we can see, that left amount is decreased by one:
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-33-29.png?raw=true)
+
+We can also delete raws from both tables by clicking on needed raw and the to "Delete" button
