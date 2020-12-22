@@ -12,7 +12,7 @@ public class Database {
     final static String pass = "123123123";
     static Connection connection = null;
     final static String SELECT_QUERY =
-            "SELECT bookId, bookName, authorName, totalAmount, leftAmount FROM tblInfo";
+            "SELECT bookId, bookName, authorName, totalAmount, leftAmount FROM tblInfo ORDER BY bookId;";
     final static String SELECT_QUERY2 =
             "SELECT\n" +
                     "\ttblstdlib.bookId,\n" +
@@ -23,7 +23,8 @@ public class Database {
                     "FROM\n" +
                     "\ttblstdlib\n" +
                     "LEFT OUTER JOIN tblStudents\n" +
-                    "    ON tblStudents.stdId = tblstdlib.stdId";
+                    "    ON tblStudents.stdId = tblstdlib.stdId\n"+
+                    "ORDER BY bookId;";
 
     public static List<TblStudents> init2() throws SQLException {
         Statement statement = null;
