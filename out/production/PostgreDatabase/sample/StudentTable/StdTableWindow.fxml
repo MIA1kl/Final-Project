@@ -18,7 +18,7 @@
             <TableColumn fx:id="dueDate" prefWidth="99.99996948242188" text="Due Date" />
         </columns>
       </TableView>
-      <Button fx:id="btnAdd" layoutX="14.0" layoutY="358.0" mnemonicParsing="false" text="Add Student" textFill="#870909">
+      <Button fx:id="btnAdd" layoutX="14.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleStdAdding" text="Add Student" textFill="#870909">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>

@@ -22,7 +22,7 @@ public class Database {
                     "\tduedate\n" +
                     "FROM\n" +
                     "\ttblstdlib\n" +
-                    "INNER JOIN tblStudents\n" +
+                    "LEFT OUTER JOIN tblStudents\n" +
                     "    ON tblStudents.stdId = tblstdlib.stdId";
 
     public static List<TblStudents> init2() throws SQLException {
@@ -71,11 +71,26 @@ public class Database {
         return tblInfo;
     }
 
+//    public static checkexist(String id){
+//
+//
+//    }
 
     public static void addBook(Tblinfo book) {
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate("INSERT INTO tblInfo (bookName, authorName,totalAmount, leftAmount) " + "VALUES ('" + book.getBookName() +"','" + book.getAuthorName()+"','" + book.getTotalAmount() +"','" + book.getLeftAmount()  + "')");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+
+    public static void addStudent(TblStudents student) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("INSERT INTO tblStudents(stdId, stdName, stdSurname, dueDate) " + "VALUES ('" + student.getStdId() +"','" + student.getStdName()+"','" + student.getStdSurname() +"','" + student.getDueDate()  + "')");
+            statement.executeUpdate("INSERT INTO tblStdLib(bookId, stdId)  " + "VALUES ('" + student.getBookId() +"','" + student.getStdId()+ "')");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
