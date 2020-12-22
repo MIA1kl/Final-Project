@@ -30,3 +30,15 @@ Now we return to the main window and click "Refresh", after we can see a new row
 ## There is the second window, which we opened bu clicking "Students Table" button on Main window: 
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_02-43-40.png?raw=true)
+
+We also can add student for the needed book by clicking "Add Student" button:
+
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-28-54.png?raw=true)
+
+After refreshing, the connection between the student and the table is added on the database:
+
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-30-10.png?raw=true)
+
+When we move to the main window and refresh it, we can see, that left amount is decreased by one:
+
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-33-29.png?raw=true)
