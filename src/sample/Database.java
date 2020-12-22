@@ -89,8 +89,12 @@ public class Database {
     public static void addStudent(TblStudents student) {
         try {
             Statement statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO tblStudents(stdId, stdName, stdSurname, dueDate) " + "VALUES ('" + student.getStdId() +"','" + student.getStdName()+"','" + student.getStdSurname() +"','" + student.getDueDate()  + "')");
+            try{statement.executeUpdate("INSERT INTO tblStudents(stdId, stdName, stdSurname, dueDate) " + "VALUES ('" + student.getStdId() +"','" + student.getStdName()+"','" + student.getStdSurname() +"','" + student.getDueDate()  + "')");
+            }catch (Exception e){
+                System.out.println("This student is already in this table");
+            }
             statement.executeUpdate("INSERT INTO tblStdLib(bookId, stdId)  " + "VALUES ('" + student.getBookId() +"','" + student.getStdId()+ "')");
+            statement.executeUpdate("UPDATE tblInfo SET leftAmount = LeftAmount-1 WHERE bookid ="+student.getBookId()+";");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
