@@ -1,0 +1,28 @@
+.root{
+    -fx-background-color: #ffefd5;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+}
+.table{
+    -fx-background-image: url("Background.png");
+    -fx-background-size: 250px 250px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 150px top 25px ;
+
+}
+
+.table1{
+    -fx-background-image: url("Background.png");
+    -fx-background-size: 250px 250px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left 150px top 25px ;
+}
+.table-row-cell:hover{
+    -fx-background-color: #525252;
+}
+
+.table-row-cell:focused{
+    -fx-background-color: black;
+}

@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TableView fx:id="table" layoutX="16.0" layoutY="77.0" onMouseClicked="#clickItem" prefHeight="276.0" prefWidth="567.0">
+      <TableView fx:id="table" layoutX="16.0" layoutY="71.0" onMouseClicked="#clickItem" prefHeight="287.0" prefWidth="567.0" styleClass="table" stylesheets="@../CSS/styles.css">
         <columns>
           <TableColumn fx:id="bookId" prefWidth="75.0" text="bookId" />
             <TableColumn fx:id="bookName" prefWidth="160.0" text="bookName" />
@@ -36,7 +36,7 @@
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font></Button>
-      <Label layoutX="206.0" text="Library of IAU" textFill="#870909">
+      <Label layoutX="206.0" text="Library of AIU" textFill="#870909">
          <font>
             <Font name="Californian FB Bold" size="30.0" />
          </font>

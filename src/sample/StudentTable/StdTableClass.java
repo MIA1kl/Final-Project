@@ -38,6 +38,7 @@ public class StdTableClass implements Initializable {
         try {
             root = FXMLLoader.load(getClass().getResource("/sample/StudentTable/AddStudent/AddStd.fxml"));
             Scene scene = new Scene(root);
+            scene.getStylesheets().add("/CSS/styles.css");
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();

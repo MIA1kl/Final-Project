@@ -39,13 +39,14 @@ public class Controller implements Initializable{
 
     @FXML
     void handleButtonAction(ActionEvent event) {
-        Parent root1= null;
+        Parent root= null;
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/sample/StudentTable/StdTableWindow.fxml"));
-            root1 = loader.load();
+            root = loader.load();
             Stage stage = new Stage();
-            Scene scene = new Scene(root1);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/CSS/styles.css");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -59,6 +60,7 @@ public class Controller implements Initializable{
         try {
             root = FXMLLoader.load(getClass().getResource("/sample/addition/SecondWindow.fxml"));
             Scene scene = new Scene(root);
+            scene.getStylesheets().add("/CSS/styles.css");
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
