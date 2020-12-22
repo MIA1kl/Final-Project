@@ -15,7 +15,10 @@ Here we can see the list of all books, with it's amount. There are 4 buttons on 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-15-38.png?raw=true)
 
 
-When we put the book name, author name or amounts of the book the appropriate rows are stay, and the unwanted raws are disappear:
+When we put the book name, author name or amounts of the book, the appropriate rows are stay, and the unwanted raws are disappear:
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-17-06.png?raw=true)
 
+By clicking on the button named "Add Book" we move to a new window, where we can fill all the text fields and add the book to a database:
+
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-19-55.png?raw=true_
