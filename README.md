@@ -15,7 +15,7 @@ Here we can see the list of all books, with it's amount. There are 4 buttons on 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-15-38.png?raw=true)
 
 
-When we put the book name, author name or amounts of the book, the appropriate rows are stay, and the unwanted raws are disappear:
+When we put the book name, author name or amounts of the book, the appropriate raws are stay, and the unwanted raws are disappear:
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-17-06.png?raw=true)
 
@@ -26,3 +26,7 @@ By clicking on the button named "Add Book" we move to a new window, where we can
 Now we return to the main window and click "Refresh", after we can see a new row with added book:
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-23-55.png?raw=true)
+
+## There is the second window, which we opened bu clicking "Students Table" button on Main window: 
+
+![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_02-43-40.png?raw=true)
