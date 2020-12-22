@@ -11,3 +11,5 @@ Each university has its own library. Unfortunately, there are not enough books f
 ## There is the first and main window: 
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_02-40-53.png)
+
+Here we can see the list of all books, with it's quantity. On the top
