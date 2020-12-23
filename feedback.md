@@ -20,3 +20,7 @@
 
 ### 7) "As for me, it is a very convenient application, I like the opportunity to reserve books, and not worry that you will not get them. I also think that it will be easier for librarians to keep track of the availability of books in the library and their timely return from students."
 © Nazik Esengulova COM19
+
+### 8) "Мага баардыгы тушунуктуу болду. Башында кантип регистрация кылып анан китептин жана студенттин данныйларын жазуу менен китепти алууга боло турганы туура так тушундурулуптур."
+© Suita Musaeva Turkey
+
