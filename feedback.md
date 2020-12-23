@@ -11,3 +11,7 @@
 ### Web
 ### Looking forward to this great project. The idea is so original and gorgeous. Design if the website looks so chic and modern. So simple to use. Also brings a great ease to the students."
 © Selma Neizioglu COM19
+
+### "Отличное решение глобальных бед человеческих"
+© Aitbek Osmonov KSMA
+
