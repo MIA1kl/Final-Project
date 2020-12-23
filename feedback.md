@@ -15,3 +15,6 @@
 ### "Отличное решение глобальных бед человеческих"
 © Aitbek Osmonov KSMA
 
+### "That's gotta be the best project I've ever seen in com19. Comparing what we've been taught and what you've done, I can confidently say that this is very impressive. Of course, it's not too close to real development, but taking into consideration the fact that you're doing custom DBMS for uni, I'm pleasantly surprised with your progress."
+© Arslan Sultanbek uulu COM19
+
