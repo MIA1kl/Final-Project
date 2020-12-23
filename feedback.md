@@ -7,9 +7,7 @@
 © Aiana Abdyrakhmanova COM20
 
 ### "Oop 
-### It is a great project. Everything is so clear. The system is easy to understand and use. Design is simple yet doesn't confuse people.
-### Web
-### Looking forward to this great project. The idea is so original and gorgeous. Design if the website looks so chic and modern. So simple to use. Also brings a great ease to the students."
+### It is a great project. Everything is so clear. The system is easy to understand and use. Design is simple yet doesn't confuse people."
 © Selma Neizioglu COM19
 
 ### "Отличное решение глобальных бед человеческих"
