@@ -4,9 +4,9 @@
 
 # [AIU's Library]
 
-## Author: Natalia Klimareva, Fatima Bekmamatova COM19-A
+## Authors: Natalia Klimareva, Fatima Bekmamatova COM19-A
 
-Each university has its own library. Unfortunately, there are not enough books for all students.In order for the librarian to see exactly how many books are left, we have created an app where he can add books, edit their number, link the book to the student and see the date when the student must turn in the book.
+Each university has its own library. Unfortunately, there are not enough books for all students.In order for the librarian to see exactly how many books are left, we have created an app where employee can add books, edit its number, link the book to the student and see the date when the student must turn in the book.
 
 ## There is the first and main window: 
 
@@ -27,7 +27,7 @@ Now we return to the main window and click "Refresh", after we can see a new row
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_03-23-55.png?raw=true)
 
-## There is the second window, which we opened bu clicking "Students Table" button on Main window: 
+## There is the second window, which we opened by clicking "Students Table" button on Main window: 
 
 ![alt text](https://github.com/MIA1kl/Final-Project/blob/master/ReadmeImages/2020-12-23_02-43-40.png?raw=true)
 
