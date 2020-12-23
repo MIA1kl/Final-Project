@@ -4,8 +4,8 @@
 
 # [AIU's Library]
 
-# The video presentation of web site
-https://youtu.be/QOaURkryEhM
+# The video presentation of java application
+https://youtu.be/6-JPnIEL_cw
 
 ## Authors: Natalia Klimareva, Fatima Bekmamatova COM19-A
 
