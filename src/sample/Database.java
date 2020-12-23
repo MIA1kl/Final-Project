@@ -72,11 +72,6 @@ public class Database {
         return tblInfo;
     }
 
-//    public static checkexist(String id){
-//
-//
-//    }
-
     public static void addBook(Tblinfo book) {
         try {
             Statement statement = connection.createStatement();
