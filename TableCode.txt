@@ -1,0 +1,23 @@
+CREATE TABLE tblInfo (
+   bookId INT NOT NULL GENERATED ALWAYS AS IDENTITY,
+   bookName varchar (100) NOT NULL,
+   authorName varchar (100) NOT NULL,
+   totalAmount int,
+   leftAmount int,
+   PRIMARY KEY (bookId)
+);
+
+CREATE TABLE tblStudents (
+   stdId varchar (11) NOT NULL,
+   stdName varchar (50) NOT NULL,
+   stdSurname varchar (50) NOT NULL,
+   dueDate date NOT NULL,
+   PRIMARY KEY (stdId)
+);
+
+CREATE TABLE tblStdLib (
+   bookId INT NOT NULL,
+   stdId varchar (11) NOT NULL,
+   FOREIGN KEY (bookId) REFERENCES tblInfo (bookId), 
+   FOREIGN KEY (stdId) REFERENCES tblStudents (stdId)
+);
